@@ -8,34 +8,7 @@ import daointerfaces01917.ProduktBatchKompDAO;
 import dto01917.ProduktBatchDTO;
 import dto01917.ProduktBatchKompDTO;
 
-public class MySQLProduktBatchKompDAO implements ProduktBatchKompDAO,
-		ProduktBatchDAO {
-
-	@Override
-	public ProduktBatchDTO getProduktBatch(int pbId) throws DALException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<ProduktBatchDTO> getProduktBatchList() throws DALException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void createProduktBatch(ProduktBatchDTO produktbatch)
-			throws DALException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateProduktBatch(ProduktBatchDTO produktbatch)
-			throws DALException {
-		// TODO Auto-generated method stub
-
-	}
+public class MySQLProduktBatchKompDAO implements ProduktBatchKompDAO {
 
 	@Override
 	public ProduktBatchKompDTO getProduktBatchKomp(int pbId, int rbId)
