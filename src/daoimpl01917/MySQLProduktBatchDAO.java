@@ -17,7 +17,7 @@ public class MySQLProduktBatchDAO implements ProduktBatchDAO {
 	public ProduktBatchDTO getProduktBatch(int pbId) throws DALException {
 			ResultSet rs = Connector.doQuery("SELECT * FROM produktbatch WHERE pb_id = " + pbId);
 		    try {
-		    	if (!rs.first()) throw new DALException("Operatoeren " + pbId + " findes ikke");
+		    	if (!rs.first()) throw new DALException("produktbatch: " + pbId + " findes ikke");
 		    	return new ProduktBatchDTO (rs.getInt("pb_id"), rs.getInt("status"), rs.getInt("recept_id"));
 		    }
 		    catch (SQLException e) {throw new DALException(e); }
@@ -50,11 +50,8 @@ public class MySQLProduktBatchDAO implements ProduktBatchDAO {
 	public void updateProduktBatch(ProduktBatchDTO produktbatch)
 			throws DALException {
 		Connector.doUpdate(
-				"UPDATE operatoer SET  pb_id = " + produktbatch.getPbId() + ", status = " + produktbatch.getStatus() + 
-				"', cpr = '" + produktbatch.getCpr() + "', password = '" + opr.getPassword() + "' WHERE opr_id = " +
-				opr.getOprId()
-		);
-
+				"UPDATE produktbatch SET  pb_id = " + produktbatch.getPbId() + ", status = " + produktbatch.getStatus() + 
+				", recept_id = " + produktbatch.getReceptId() + "where pb_id = " + produktbatch.getPbId());
 	}
 
 }
