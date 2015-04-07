@@ -60,10 +60,10 @@ public class RaavareBatchTest {
 		}
 		
 		try {
-			System.out.println("Opdatere råvarebatch ");
-			RaavareBatchDTO newRaavareBatch = new RaavareBatchDTO (45,1,2000);
+			System.out.println("Opdatere råvarebatch 45 med nyt raavare_id 5, og mængde 500");
+			RaavareBatchDTO newRaavareBatch = new RaavareBatchDTO (45,5,500);
 			raavareBatchDAO.updateRaavareBatch(newRaavareBatch);
-			List<RaavareBatchDTO> list = raavareBatchDAO.getRaavareBatchList(1);
+			List<RaavareBatchDTO> list = raavareBatchDAO.getRaavareBatchList(5);
 			for (RaavareBatchDTO element : list) {
 				System.out.println(element);	
 			}
