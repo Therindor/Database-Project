@@ -23,8 +23,8 @@ public class ProduktBatchTest {
 		try { System.out.println(pbDAO.getProduktBatch(3)); }
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
-		System.out.println("Indsaettelse af ny produktbatch med pbId =  4");
-		ProduktBatchDTO pbDTO = new ProduktBatchDTO(4,1,3);
+		System.out.println("Indsaettelse af ny produktbatch med pbId =  7");
+		ProduktBatchDTO pbDTO = new ProduktBatchDTO(7,1,3);
 		try { pbDAO.createProduktBatch(pbDTO); }
 		catch (DALException e) { System.out.println(e.getMessage()); }	
 		
@@ -34,8 +34,7 @@ public class ProduktBatchTest {
 		
 		
 		System.out.println("Opdatering af produktbatch");
-		pbDTO.setStatus(0);
-		try { pbDAO.updateProduktBatch(pbDTO); }
+		try { pbDAO.updateProduktBatch(new ProduktBatchDTO(3,2,2)); }
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
 		System.out.println("Alle produktbatch:");
