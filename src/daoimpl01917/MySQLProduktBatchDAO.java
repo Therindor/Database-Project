@@ -50,7 +50,7 @@ public class MySQLProduktBatchDAO implements ProduktBatchDAO {
 			throws DALException {
 		Connector.doUpdate(
 				"UPDATE produktbatch SET  pb_id = " + produktbatch.getPbId() + ", status = " + produktbatch.getStatus() + 
-				", recept_id = " + produktbatch.getReceptId() + "where pb_id = " + produktbatch.getPbId());
+				", recept_id = " + produktbatch.getReceptId() + " where pb_id = " + produktbatch.getPbId());
 	}
 
 }
