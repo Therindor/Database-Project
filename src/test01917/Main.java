@@ -1,12 +1,14 @@
 package test01917;
 
-import daoimpl01917.MySQLOperatoerDAO;
-import daointerfaces01917.DALException;
-import dto01917.OperatoerDTO;
-
 import java.sql.SQLException;
 
 import connector01917.Connector;
+import daoimpl01917.MySQLOperatoerDAO;
+import daoimpl01917.MySQLRaavareBatchDAO;
+import daoimpl01917.MySQLRaavareDAO;
+import daoimpl01917.MySQLReceptDAO;
+import daointerfaces01917.DALException;
+import dto01917.OperatoerDTO;
 
 public class Main {
 	public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class Main {
 		
 		System.out.println("Operatoer nummer 3:");
 		MySQLOperatoerDAO opr = new MySQLOperatoerDAO();
+		MySQLReceptDAO receptDAO = new MySQLReceptDAO();
 		try { System.out.println(opr.getOperatoer(3)); }
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
@@ -45,7 +48,14 @@ public class Main {
 		
 		System.out.println("Operatoer nummer 5:");
 		try { System.out.println(opr.getOperatoer(5)); }
-		catch (DALException e) { System.out.println(e.getMessage()); }		
+		catch (DALException e) { System.out.println(e.getMessage()); }	
+			
 		
 	}
+		
+		
+		
+	
+		
+		
 }
