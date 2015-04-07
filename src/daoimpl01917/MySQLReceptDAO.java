@@ -49,9 +49,10 @@ public class MySQLReceptDAO implements ReceptDAO {
 	@Override
 	public void updateRecept(ReceptDTO recept) throws DALException {
 		// TODO Auto-generated method stub
+//		String.format("UPDATE recept SET recept_id = %i, recept_navn = '%s' WHERE recept_id = %i", )
 		Connector.doUpdate(
 				"UPDATE recept SET  recept_id = " + recept.getReceptId() + ", recept_navn = '" + recept.getReceptNavn() + 
-				"') where recept_id = " + recept.getReceptId());
+				"' where recept_id = " + recept.getReceptId());
 	}
 
 }
