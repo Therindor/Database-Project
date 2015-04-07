@@ -58,7 +58,7 @@ public class MySQLReceptKompDAO implements ReceptKompDAO {
 	public void createReceptKomp(ReceptKompDTO receptkomponent)
 			throws DALException {
 		Connector.doUpdate(
-				"INSERT INTO receptkomponent(recept_id, raavare_id, nom_netto, tolerance) VALUES " +
+				"INSERT INTO receptkomponent (recept_id, raavare_id, nom_netto, tolerance) VALUES " +
 				"(" + receptkomponent.getReceptId() + ", " + receptkomponent.getRaavareId() + ", " + receptkomponent.getNomNetto() + ", " + 
 				receptkomponent.getTolerance()  + ")"
 			);
@@ -69,9 +69,8 @@ public class MySQLReceptKompDAO implements ReceptKompDAO {
 	public void updateReceptKomp(ReceptKompDTO receptkomponent)
 			throws DALException {
 		Connector.doUpdate(
-				"update receptkomponent(recept_id, raavare_id, nom_netto, tolerance) VALUES " +
-						"(" + receptkomponent.getReceptId() + ", " + receptkomponent.getRaavareId() + ", " + receptkomponent.getNomNetto() + ", " + 
-						receptkomponent.getTolerance()  +  "' WHERE recept_id = " + receptkomponent.getReceptId()
+				"update receptkomponent set nom_netto = " + receptkomponent.getNomNetto() + ", tolerance = " + receptkomponent.getTolerance()
+						  + " WHERE recept_id = " + receptkomponent.getReceptId() + " and raavare_id = " + receptkomponent.getRaavareId()
 		);
 
 

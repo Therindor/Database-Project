@@ -9,9 +9,7 @@ import daointerfaces01917.ReceptKompDAO;
 import daoimpl01917.MySQLReceptKompDAO;
 import dto01917.ReceptKompDTO;
 public class ReceptKompTest {
-	
-	private static final int receptID = 1;
-	private static final int raavareID = 2;
+
 	
 	public static void main(String[] args){
 		
@@ -28,8 +26,8 @@ public class ReceptKompTest {
 			System.out.println("receptKomponent-liste med recept_id = 3 er: " + rcptKomp.getReceptKompList(3));
 		
 			System.out.println("receptkomponent-liste er: " + rcptKomp.getReceptKompList());
-			rcptKomp.createReceptKomp(new ReceptKompDTO(4, 1, 3.0, 0.5));
-			System.out.println("ny oprettet receptkomp er: " + rcptKomp.getReceptKomp(4, 2));
+			rcptKomp.createReceptKomp(new ReceptKompDTO(1, 3, 3.0, 0.5));
+			System.out.println("ny oprettet receptkomp er: " + rcptKomp.getReceptKomp(1, 3));
 			rcptKomp.updateReceptKomp(new ReceptKompDTO(2, 1, 10.5, 2.5));
 			System.out.println("opdateret receptkomp er: " + rcptKomp.getReceptKomp(2, 1));
 		} catch (DALException e) {
