@@ -32,21 +32,22 @@ public class ReceptTest {
 		try { System.out.println(receptDAO.getRecept(3)); }
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
-		System.out.println("Indsættelse af Recept Lasange med Recept nummer 9");
-		ReceptDTO newRecept = new ReceptDTO(10,"Lasange");
+		System.out.println("Indsættelse af Recept Fiskefrikedeller");
+		ReceptDTO newRecept = new ReceptDTO(10,"Fiskefrikedeller");
 		try { 
 		
 			receptDAO.createRecept(newRecept);
-			System.out.println(receptDAO.getRecept(10));
+			newRecept = receptDAO.getLatestRecept();
+			System.out.println(receptDAO.getRecept(newRecept.getReceptId()));
 		}
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
 		
-		System.out.println("Opdater receptnavn på 10:");
+		System.out.println("Opdater receptnavn på " + newRecept.getReceptId());
 		newRecept.setReceptNavn("pizza");
 		try { 
 			receptDAO.updateRecept(newRecept);
-			System.out.println(receptDAO.getRecept(10));
+			System.out.println(receptDAO.getRecept(newRecept.getReceptId()));
 		}
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
