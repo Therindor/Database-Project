@@ -47,8 +47,8 @@ public class JunitRecept {
 				try { 
 				
 					receptDAO.createRecept(newRecept);
-					newRecept = receptDAO.getLatestRecept();				
-					assertEquals(newRecept.getReceptNavn(),"Fiskefrikedeller");
+					newRecept = receptDAO.getLatestRecept();		
+					assertEquals(receptDAO.getRecept(newRecept.getReceptId()).getReceptNavn(),"Fiskefrikedeller");
 				}
 				catch (DALException e) { System.out.println(e.getMessage()); }
 				
