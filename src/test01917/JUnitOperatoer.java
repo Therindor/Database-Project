@@ -27,7 +27,7 @@ public class JUnitOperatoer {
 		catch (DALException e) { System.out.println(e.getMessage()); }
 		
 		System.out.println("Indsaettelse af ny operatoer med opr_id =  4");
-		OperatoerDTO oprDTO = new OperatoerDTO(4,"Don Juan","DJ","000000-0000","iloveyou");
+		OperatoerDTO oprDTO = new OperatoerDTO(4,"Don Juan","DJ","000000-0000","iloveyou123234");
 		try { opr.createOperatoer(oprDTO); }
 		catch (DALException e) { System.out.println(e.getMessage()); }	
 		

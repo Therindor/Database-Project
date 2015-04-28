@@ -9,7 +9,7 @@ public abstract class Constant
 		server					= "localhost",  // database-serveren
 		database				=  "recept",  //"jdbcdatabase", // navnet paa din database = dit studienummer
 		username				= "root", // dit brugernavn = dit studienummer 
-		password				= "cookies11"; // dit password som du har valgt til din database
+		password				= ""; // dit password som du har valgt til din database
 	
 	public static final int
 		port					= 3306;
