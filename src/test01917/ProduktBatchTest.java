@@ -1,12 +1,10 @@
 package test01917;
 import connector01917.Connector;
-import daoimpl01917.MySQLOperatoerDAO;
 import daoimpl01917.MySQLProduktBatchDAO;
 
 import java.sql.SQLException;
 
 import daointerfaces01917.DALException;
-import dto01917.OperatoerDTO;
 import dto01917.ProduktBatchDTO;
 
 public class ProduktBatchTest {
