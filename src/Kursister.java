@@ -5,24 +5,24 @@ public class Kursister {
 		//load driveren
 		Class.forName("com.mysql.jdbc.Driver");
 				//opret forbindelse til databasen "test"
-				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","cookies11");
 
-		//opret sætningsobjekt
+		//opret sï¿½tningsobjekt
 		Statement s = con.createStatement();
 		s.executeUpdate("DROP TABLE IF EXISTS kursister");
 		//opret ny tabel "kursister" i databasen
 		s.executeUpdate("CREATE TABLE kursister (kursistnr INTEGER,  "+
 							"navn VARCHAR(30), emailadresse VARCHAR(20))");
 
-		//indsæt rækker i tabellen "kursister"
+		//indsï¿½t rï¿½kker i tabellen "kursister"
 		s.executeUpdate("INSERT INTO kursister VALUES (357, 'Henry Wood','henry@wood.gb')");
 		s.executeUpdate("INSERT INTO kursister VALUES (215, 'Henry Purcell','henry@purcell.gb')");
 		s.executeUpdate("INSERT INTO kursister VALUES (448, 'William Walton','william@walton.gb')");
 
-		//hent information om alle kurister på skærmen
+		//hent information om alle kurister pï¿½ skï¿½rmen
 		ResultSet rs = s.executeQuery("SELECT * FROM kursister");
 
-		//udskriv information om alle kursister på skærmen
+		//udskriv information om alle kursister pï¿½ skï¿½rmen
 		while (rs.next())
 		{
 			int kursistnr= rs.getInt("kursistnr");
