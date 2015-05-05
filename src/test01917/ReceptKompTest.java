@@ -2,8 +2,6 @@ package test01917;
 
 
 import java.sql.SQLException;
-import java.util.List;
-
 import connector01917.Connector;
 import daointerfaces01917.DALException;
 import daointerfaces01917.ReceptKompDAO;
@@ -23,11 +21,9 @@ public class ReceptKompTest {
 		ReceptKompDAO rcptKomp = new MySQLReceptKompDAO();
 		try {
 			System.out.println("recept med recept_id = 1, og raavare_id = 2 er: " + rcptKomp.getReceptKomp(1, 2));
-		
 			System.out.println("receptKomponent-liste med recept_id = 3 er: " + rcptKomp.getReceptKompList(3));
-		
 			System.out.println("receptkomponent-liste er: " + rcptKomp.getReceptKompList());
-			rcptKomp.createReceptKomp(new ReceptKompDTO(1, 3, 44.4, 0.5));
+			rcptKomp.createReceptKomp(new ReceptKompDTO(1, 4, 3.0, 0.5));
 			System.out.println("ny oprettet receptkomp er: " + rcptKomp.getReceptKomp(1, 3));
 			rcptKomp.updateReceptKomp(new ReceptKompDTO(2, 1, 10.5, 2.5));
 			System.out.println("opdateret receptkomp er: " + rcptKomp.getReceptKomp(2, 1));

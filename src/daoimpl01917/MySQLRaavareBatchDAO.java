@@ -58,7 +58,7 @@ public class MySQLRaavareBatchDAO implements RaavareBatchDAO {
 	public void createRaavareBatch(RaavareBatchDTO raavarebatch)throws DALException {
 		Connector.doUpdate(
 				"INSERT INTO raavarebatch(rb_id, raavare_id, maengde) VALUES " +
-				"(" + raavarebatch.getRbId() + ", " + raavarebatch.getRaavareId() + ", " + raavarebatch.getMaengde() + ")");
+				"(" + "DEFAULT" + ", " + raavarebatch.getRaavareId() + ", " + raavarebatch.getMaengde() + ")");
 	}
 
 	@Override
