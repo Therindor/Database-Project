@@ -40,10 +40,9 @@ public class MySQLReceptDAO implements ReceptDAO {
 
 	@Override
 	public void createRecept(ReceptDTO recept) throws DALException {
-		// TODO Auto-generated method stub
 		Connector.doUpdate(
 				"INSERT INTO recept(recept_id, recept_navn) VALUES " +
-				"(" + recept.getReceptId() + ", '" + recept.getReceptNavn() + "')");
+				"(" + "DEFAULT" + ", '" + recept.getReceptNavn() + "')");
 	}
 
 	@Override
@@ -53,6 +52,16 @@ public class MySQLReceptDAO implements ReceptDAO {
 		Connector.doUpdate(
 				"UPDATE recept SET  recept_id = " + recept.getReceptId() + ", recept_navn = '" + recept.getReceptNavn() + 
 				"' where recept_id = " + recept.getReceptId());
+	}
+	
+	@Override
+	public ReceptDTO getLatestRecept() throws DALException {
+		ResultSet rs = Connector.doQuery("SELECT * FROM recept ORDER BY recept_id DESC LIMIT 1");
+		try {
+	    	if (!rs.first()) throw new DALException("recept findes ikke");
+	    	return new ReceptDTO (rs.getInt("recept_id"), rs.getString("recept_navn"));
+	    }
+	    catch (SQLException e) {throw new DALException(e); }
 	}
 
 }

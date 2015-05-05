@@ -1,14 +1,12 @@
 package test01917;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import connector01917.Connector;
+import daoimpl01917.MySQLRaavareBatchDAO;
 import daointerfaces01917.DALException;
 import dto01917.RaavareBatchDTO;
-import daoimpl01917.MySQLRaavareBatchDAO;
-import daoimpl01917.MySQLReceptDAO;
 
 public class RaavareBatchTest {
 	
@@ -60,13 +58,13 @@ public class RaavareBatchTest {
 		}
 		
 		try {
-			System.out.println("Opdatere råvarebatch ");
-			RaavareBatchDTO newRaavareBatch = new RaavareBatchDTO (45,1,2000);
+			System.out.println("Opdatere råvarebatch 45 med nyt raavare_id 5, og mængde 500");
+			RaavareBatchDTO newRaavareBatch = new RaavareBatchDTO (45,5,500);
 			raavareBatchDAO.updateRaavareBatch(newRaavareBatch);
-			List<RaavareBatchDTO> list = raavareBatchDAO.getRaavareBatchList(1);
-			for (RaavareBatchDTO element : list) {
-				System.out.println(element);	
-			}
+			System.out.println("Hente raavarebatch med rb_id 45:");
+			newRaavareBatch = raavareBatchDAO.getRaavareBatch(45);
+			System.out.println(newRaavareBatch.getRbId() + "\t" + newRaavareBatch.getRaavareId()
+					+ "\t" + newRaavareBatch.getMaengde());
 		} catch (DALException e) {
 			e.printStackTrace();
 		}

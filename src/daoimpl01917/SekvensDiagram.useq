@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true">  
+  <object id="1" language="java" name="test01917.ReceptTest" project="jdbtest" 
+    file="/jdbtest/src/test01917/ReceptTest.java" binary="false" label="receptTest" type="class" autoSize="false">    
+    <position height="400" width="149" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="72" width="105" x="5" y="94"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="219" width="105" x="5" y="166"/>    
+    </execution>  
+  </object>  
+  <object id="12" language="java" name="daoimpl01917.MySQLReceptDAO" project="jdbtest" 
+    file="/jdbtest/src/daoimpl01917/MySQLReceptDAO.java" binary="false" label="mySQLReceptDAO" type="class" 
+    autoSize="false">    
+    <position height="376" width="216" x="149" y="0"/>    
+    <execution id="4">      
+      <position height="24" width="157" x="114" y="118"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="113" width="157" x="114" y="190"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="24" width="157" x="114" y="337"/>    
+    </execution>  
+  </object>  
+  <object id="17" language="java" name="dto01917.ReceptDTO" project="jdbtest" 
+    file="/jdbtest/src/dto01917/ReceptDTO.java" binary="false" label="receptDTO" type="class" autoSize="false">    
+    <position height="339" width="146" x="310" y="0"/>    
+    <execution id="9">      
+      <position height="24" width="107" x="275" y="292"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="24" width="107" x="275" y="255"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="connector01917.Connector" project="jdbtest" 
+    file="/jdbtest/src/connector01917/Connector.java" binary="false" label="connector" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="496" y="0"/>    
+    <execution id="14">      
+      <position height="24" width="98" x="386" y="214"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="getRecept(int):dto01917.ReceptDTO">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="createRecept(dto01917.ReceptDTO):void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="setReceptNavn(java.lang.String):void">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="updateRecept(dto01917.ReceptDTO):void" x="87" y="316">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="13" operation="doUpdate(java.lang.String):int">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="getReceptNavn():java.lang.String" x="285" y="235">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>
+</sequence-diagram>
