@@ -5,7 +5,7 @@ public class Kursister {
 		//load driveren
 		Class.forName("com.mysql.jdbc.Driver");
 				//opret forbindelse til databasen "test"
-				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","cookies11");
+				Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
 
 		//opret s�tningsobjekt
 		Statement s = con.createStatement();
